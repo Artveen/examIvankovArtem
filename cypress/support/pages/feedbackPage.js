@@ -17,20 +17,25 @@ getCaptchaField(){
 getSubmitButton(){
     return cy.get('[id="submitButton"]')
 }
-sumbitFeedbackFormWithWrongCaptchaResult(comment, captcha){
-    cy.log("SUbmit feedback form with wrong result in captcha")
+
+
+sumbitFeedbackFormWithWrongCaptchaResult(comment,captcha){
+    cy.log("Submit feedback form with wrong result in captcha")
     this.closeDismissDialog().click();
     this.getCommentField().type(comment);
-    this.getRating().click();
+    this.getRating().type(`{leftArrow}, {leftArrow}`).click();
     this.getCaptchaField().type(captcha);
     this.getSubmitButton().click();
 }
+
 sumbitFeedbackFormWithLongComment(longComment, captcha){
-    cy.log("SUbmit feedback form with wrong result in captcha")
+    cy.log("Submit feedback form with wrong result in captcha")
     this.closeDismissDialog().click();
     this.getCommentField().type(longComment);
-    this.getRating().click();
+    this.getRating().type(`{leftArrow}, {leftArrow}`).click();
     this.getCaptchaField().type(captcha);
     this.getSubmitButton().click();
 }
 }export default new feedbackPage 
+
+

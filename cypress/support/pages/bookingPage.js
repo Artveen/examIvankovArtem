@@ -22,5 +22,8 @@ class bookingPage{
     }
     getSubmitButton(){
         return cy.get('[id="loginButton"]')
-    
-    }}export default new bookingPage 
+     }
+     getAddToBasketButton(){
+        return cy.contains('mat-card', ' Apple Juice (1000ml) ').find('[aria-label="Add to Basket"]')
+    }
+    }export default new bookingPage 
